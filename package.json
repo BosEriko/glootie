@@ -1,0 +1,23 @@
+{
+  "name": "glootie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BosEriko/glootie.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BosEriko/glootie/issues"
+  },
+  "homepage": "https://github.com/BosEriko/glootie#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
