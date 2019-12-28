@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node public/main.js",
+    "start": "npm run build && node public/main.js",
     "logs": "heroku logs --tail",
+    "build": "tsc",
     "develop": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
