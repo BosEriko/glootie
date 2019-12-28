@@ -10,7 +10,7 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
-client.on('message', message => {
+client.on('message', (message:any) => {
   if (message.content === 'glootie') {
     message.channel.send('Do you want to develop an app?');
   }
