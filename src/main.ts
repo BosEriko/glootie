@@ -1,3 +1,4 @@
+import * as admin from 'firebase-admin'
 import Discord from 'discord.js'
 
 const client = new Discord.Client()
