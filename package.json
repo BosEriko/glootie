@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node public/main.js",
+    "start": "npm run build && node -r dotenv/config public/main.js",
     "logs": "heroku logs --tail --app glootie",
     "build": "tsc",
     "watch": "tsc --watch",
