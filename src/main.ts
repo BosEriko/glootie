@@ -1,6 +1,5 @@
 const Discord = require('discord.js')
 const client  = new Discord.Client()
-const config  = process.env || require('./config.json')
 
 client.once('ready', () => {
   console.log('Ready!')
@@ -12,4 +11,4 @@ client.on('message', (message:any) => {
   }
 })
 
-client.login(config.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
