@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && node public/main.js",
-    "logs": "heroku logs --tail",
+    "logs": "heroku logs --tail --app glootie",
     "build": "tsc",
-    "develop": "tsc --watch",
+    "develop": "tsc --watch && node public/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
