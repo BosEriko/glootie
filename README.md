@@ -13,5 +13,5 @@ Please see the [issue tracker](https://github.com/BosEriko/glootie/issues) of th
 ## References
 
 - [Glootie's Discord Invite Link](https://discordapp.com/oauth2/authorize?&client_id=660062248512913429&scope=bot&permissions=2146958839)
-- [Glootie's Discord Invite Link (Sraging)](https://discordapp.com/oauth2/authorize?&client_id=660725760184811522&scope=bot&permissions=2146958839)
+- [Glootie's Discord Invite Link (Staging)](https://discordapp.com/oauth2/authorize?&client_id=660725760184811522&scope=bot&permissions=2146958839)
 - [DiscrdJS Guide](https://discordjs.guide/creating-your-bot/adding-more-commands.html#simple-command-structure)
