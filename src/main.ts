@@ -5,10 +5,10 @@ const client = new Discord.Client()
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: "glootie-bot.firebaseapp.com",
-  databaseURL: "https://glootie-bot.firebaseio.com",
-  projectId: "glootie-bot",
-  storageBucket: "glootie-bot.appspot.com",
+  authDomain: `${process.env.FIREBASE_PROJECT_NAME}.firebaseapp.com`,
+  databaseURL: `https://${process.env.FIREBASE_PROJECT_NAME}.firebaseio.com`,
+  projectId: process.env.FIREBASE_PROJECT_NAME,
+  storageBucket: `${process.env.FIREBASE_PROJECT_NAME}.appspot.com`,
   messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.FIREBASE_APP_ID,
   measurementId: process.env.FIREBASE_MEASUREMENT_ID
