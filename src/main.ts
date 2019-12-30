@@ -1,8 +1,6 @@
 import * as firebase from "firebase/app"
 import Discord from 'discord.js'
 
-const client = new Discord.Client()
-
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: `${process.env.FIREBASE_PROJECT_NAME}.firebaseapp.com`,
@@ -13,8 +11,10 @@ const firebaseConfig = {
   appId: process.env.FIREBASE_APP_ID,
   measurementId: process.env.FIREBASE_MEASUREMENT_ID
 }
-
 firebase.initializeApp(firebaseConfig)
+const db = firebase.firestore()
+
+const client = new Discord.Client()
 
 client.once('ready', () => {
   console.log('Ready!')
