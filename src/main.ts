@@ -25,11 +25,17 @@ client.once(`ready`, () => {
 })
 
 client.on(`message`, (message:any) => {
-  if (message.content.startsWith(`${prefix}ping`)) {
+  if (!message.content.startsWith(prefix) || message.author.bot) return
+
+  const args = message.content.slice(prefix.length).split(` `)
+  const command = args.shift().toLowerCase()
+
+  if (command === `ping`) {
     message.channel.send('Pong.')
-  } else if (message.content.startsWith(`${prefix}beep`)) {
+  } else if (command === `beep`) {
     message.channel.send(`Boop.`)
   }
+
   // TODO: Use db properly. For now this is just a way to use Firestore so you don't forget.
   db.collection(`message`).add({
     message: message.content
