@@ -17,14 +17,29 @@ const db = firebase.firestore()
 
 const client = new Discord.Client()
 
-client.once('ready', () => {
-  console.log('Ready!')
+// TODO: Put your prefix on Firestore and make it so that servers are able to define their own prefix
+const prefix = `$`
+
+client.once(`ready`, () => {
+  console.log(`Ready!`)
 })
 
-client.on('message', (message:any) => {
-  if (message.content === 'glootie') {
-    message.channel.send('Do you want to develop an app?')
+client.on(`message`, (message:any) => {
+  if (message.content.startsWith(`${prefix}ping`)) {
+    message.channel.send('Pong.')
+  } else if (message.content.startsWith(`${prefix}beep`)) {
+    message.channel.send(`Boop.`)
   }
+  // TODO: Use db properly. For now this is just a way to use Firestore so you don't forget.
+  db.collection(`message`).add({
+    message: message.content
+  })
+  .then(function(docRef) {
+    console.log(`Document written with ID: `, docRef.id)
+  })
+  .catch(function(error) {
+    console.error(`Error adding document: `, error)
+  })
 })
 
 client.login(process.env.DISCORD_BOT_TOKEN)
