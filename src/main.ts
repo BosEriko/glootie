@@ -29,6 +29,7 @@ client.on(`message`, (message:any) => {
 
   const args = message.content.slice(prefix.length).split(` `)
   const command = args.shift().toLowerCase()
+  const taggedUser = message.mentions.users.first()
 
   if (command === `ping`) {
     message.channel.send('Pong.')
