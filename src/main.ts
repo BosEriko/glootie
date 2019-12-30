@@ -1,4 +1,5 @@
-import * as firebase from "firebase/app"
+import * as firebase from 'firebase/app'
+import 'firebase/firestore'
 import Discord from 'discord.js'
 
 const firebaseConfig = {
