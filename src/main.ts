@@ -25,6 +25,10 @@ client.once(`ready`, () => {
 })
 
 client.on(`message`, (message:any) => {
+  db.collection(`messages`).doc(message.id).set({
+    message: message.content
+  })
+
   if (!message.content.startsWith(prefix) || message.author.bot) return
 
   const args = message.content.slice(prefix.length).split(` `)
@@ -36,17 +40,6 @@ client.on(`message`, (message:any) => {
   } else if (command === `beep`) {
     message.channel.send(`Boop.`)
   }
-
-  // TODO: Use db properly. For now this is just a way to use Firestore so you don't forget.
-  db.collection(`message`).add({
-    message: message.content
-  })
-  .then(function(docRef) {
-    console.log(`Document written with ID: `, docRef.id)
-  })
-  .catch(function(error) {
-    console.error(`Error adding document: `, error)
-  })
 })
 
 client.login(process.env.DISCORD_BOT_TOKEN)
