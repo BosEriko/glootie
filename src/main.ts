@@ -2,6 +2,8 @@ import * as firebase from 'firebase/app'
 import 'firebase/firestore'
 import Discord from 'discord.js'
 
+const MESSAGES = `messages`
+
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: `${process.env.FIREBASE_PROJECT_NAME}.firebaseapp.com`,
@@ -25,7 +27,7 @@ client.once(`ready`, () => {
 })
 
 client.on(`message`, (message:any) => {
-  db.collection(`messages`).doc(message.id).set({
+  db.collection(MESSAGES).doc(message.id).set({
     message: message.content
   })
 
