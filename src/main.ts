@@ -3,6 +3,8 @@ import 'firebase/firestore'
 import Discord from 'discord.js'
 
 const MESSAGES = `messages`
+const USERS = `users`
+const SERVERS = `servers`
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
